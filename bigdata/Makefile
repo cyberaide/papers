@@ -19,3 +19,12 @@ watch:
 	latexmk -pvc -view=pdf ${FILE}
 
 .PHONY: all clean view fast watch
+
+publish:
+	cp ${FILE}.pdf /tmp
+	git checkout gh-pages
+	cp /tmp/${FILE}.pdf .
+	git add ${FILE}.pdf
+	git commit -a -m "adding new version of ${FILE}.pdf"
+	git push
+	git checkout master
