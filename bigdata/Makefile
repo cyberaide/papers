@@ -22,9 +22,7 @@ watch:
 
 publish:
 	cp ${FILE}.pdf /tmp
-	git checkout gh-pages
-	cp /tmp/${FILE}.pdf ..
-	git add ../${FILE}.pdf
-	git commit -a -m "adding new version of ${FILE}.pdf"
+	cd ..; git checkout gh-pages; cp /tmp/${FILE}.pdf . ; git add ${FILE}.pdf
+	cd ..; git commit -a -m "adding new version of ${FILE}.pdf"
 	git push
 	git checkout master
