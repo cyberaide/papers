@@ -1,6 +1,6 @@
 PATHNAME=$(shell pwd)
 BASENAME=$(shell basename $(PATHNAME))
-PROJECT=cyberaide
+PROJECT="cyberaide"
 
 all:
 	make -f Makefile force
