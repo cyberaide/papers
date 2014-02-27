@@ -25,7 +25,4 @@ publish:
 	@echo "publish ${FILE}.pdf -> http://cyberaide.github.io/papers/${FILE}.pdf" 
 	@echo "==============================================================="
 	cp ${FILE}.pdf /tmp
-	cd ..; git checkout gh-pages; cp /tmp/${FILE}.pdf . ; git add ${FILE}.pdf
-	cd ..; git commit -a -m "adding new version of ${FILE}.pdf"
-	git push
-	git checkout master
+	cd ..; git checkout gh-pages; cp /tmp/${FILE}.pdf . ; git add ${FILE}.pdf; git commit -a -m "adding new version of ${FILE}.pdf"; git push; git checkout master
