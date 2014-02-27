@@ -1,6 +1,5 @@
-
 BASENAME=$(shell basename $(PATHNAME))
-GITREPO=cloudmesh
+GITREPO=cyberaide
 
 TAG=`cat VERSION.txt`
 MANUALDIR=`pwd`
