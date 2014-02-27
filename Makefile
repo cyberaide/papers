@@ -92,13 +92,6 @@ pages: ghphtml ghpgit
 
 ghphtml:
 	cd /tmp
-	rm -rf $(DIR)
-	cd /tmp; git clone git://github.com/$(PROJECT)/$(BASENAME).git
-	cp $(DIR)/Makefile .
-	cd $(DOC); ls; make html
-	rm -fr _static
-	rm -fr _source
-	rm -fr *.html
 	cp -r $(DOC)/build/html/* .
 
 ghpgit:
