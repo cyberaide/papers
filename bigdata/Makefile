@@ -26,8 +26,9 @@ publish:
 	@echo "==============================================================="
 	cp ${FILE}.pdf /tmp
 	cd ..; git checkout gh-pages
-	cp /tmp/${FILE}.pdf .. 
-	git add ../${FILE}.pdf
-	git commit -m "adding new version of ${FILE}.pdf" ../${FILE}.pdf
+	cp /tmp/${FILE}.pdf .
+	git add ${FILE}.pdf
+	git commit -m "adding new version of ${FILE}.pdf" ${FILE}.pdf
 	git push
+	cd bigdata
 	git checkout master
