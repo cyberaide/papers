@@ -1,1 +1,0 @@
-Search.setIndex({envversion:42,terms:{code:0,repositori:0,start:0,gregor:0,contain:0,bigdata:0,laszewki:0,sourceforg:0,avail:0,also:0,futuregrid:0,other:0,laszewski:0,thi:0,year:0,googl:0,coauthor:0,com:0,tbd:0,von:0,gmail:0},objtypes:{},objnames:{},filenames:["index"],titles:["Draft Papers"],objects:{},titleterms:{contributor:0,draft:0,paper:0,list:0,bibliographi:0}})
