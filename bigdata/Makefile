@@ -1,0 +1,21 @@
+FILE=vonLaszewski-bigdata
+
+all:
+	pdflatex ${FILE}
+	bibtex ${FILE}
+	pdflatex ${FILE}
+	pdflatex ${FILE}
+
+clean:
+	rm -rf *~ *.aux *.bbl *.dvi *.log *.out *.blg *.pdf *.toc *.fdb_latexmk *.fls
+view:
+	open ${FILE}.pdf
+
+# all dependce tracking taking care of by Latexmk
+fast:
+	latexmk -pdf ${FILE}
+
+watch:
+	latexmk -pvc -view=pdf ${FILE}
+
+.PHONY: all clean view fast watch

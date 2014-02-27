@@ -1,0 +1,261 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+FutureGrid testbed for Big Data 
+\end_layout
+
+\begin_layout Author
+Gregor von Laszewsi, Geoffrey C.
+ Fox 
+\end_layout
+
+\begin_layout Address
+laszewski@gmail.com
+\end_layout
+
+\begin_layout Abstract
+FutureGrid testbed for Big Data Gregor von Laszewsi, Geoffrey C.
+ Fox laszewski@gmail.com
+\end_layout
+
+\begin_layout Abstract
+Abstract In this chapter we will be introducing you to FutureGrid that provides
+ a testbed to conduct research for Cloud, Grid, and High Performance Computing.
+ Although FutureGrid has only a relatively small number of compute cores
+ (about 4500 regu-lar cores and 14000 GPU cores) it provides an ideal playground
+ to test out various frameworks that may be useful for users to consider
+ as part of their big data analy-sis pipelines.
+\end_layout
+
+\begin_layout Abstract
+The chapter is structured as follows.
+ First we will provide the reader with an in-troduction to Future Grid.
+ We will list a number of projects that use Futuregrid to conduct data analysis
+ and introduce some of them to the reader.
+ We will tell you about which services and Hardware exists.
+ Next we will analyze which services are preinstalled and are available
+ for big data analysis.
+ As services that users may need for their work we point out how such a
+ testbed can be utilized not only while provisioning virtual machines, but
+ also on bare metal.
+\end_layout
+
+\begin_layout LyX-Code
+We conclude the chapter with our observation cast throught three years of
+ op-erating FutureGrid and provide an outlook for the next steps.
+\end_layout
+
+\begin_layout Section
+Introduction 
+\end_layout
+
+\begin_layout Abstract
+FutureGrid [FG] “is a project led by Indiana University and funded by the
+ Na-tional Science Foundation (NSF) to develop a high-performance grid test
+ bed that will allow scientists to collaboratively develop and test innovative
+ approaches to parallel, grid, and cloud computing.
+ FutureGrid will provide the infrastructure to researchers that allows them
+ to perform their own computational experiments us-ing distributed systems.
+ The goal is to make it easier for scientists to conduct such experiments
+ in a transparent manner.
+ FutureGrid users will be able to deploy their own hardware and software
+ con-figurations on a public/private cloud, and run their experiments.
+ They will be able to save their configurations and execute their experiments
+ using the provided tools.
+ The FutureGrid test bed is composed of a high-speed network connecting
+ distributed clusters of high performance computers.
+ FutureGrid employs virtual-ization technology that will allow the test
+ bed to support a wide range of operating systems.”
+\end_layout
+
+\begin_layout Abstract
+2.Overview of FutureGrid for Big Data 2.1 Service Overview
+\end_layout
+
+\begin_layout Abstract
+According to the manual FutureGrid provides a number of different services.
+ These services include: OpenStack which includes a collection of open source
+ components to deliver public and private clouds.
+ These components currently include OpenStack Com-pute) OpenStack Object
+ Storage, and OpenStack Image Service.
+ OpenStack has received considerable momentum due to its openness and the
+ support of compa-nies.
+ Nimbus which is an open-source service package that allows users to run
+ vir-tual machines on FutureGrid hardware.
+ Just as in Openstack users can upload their own virtual machine images
+ or customize existing once.
+ Nimbusnext to Eucalyp-tus is one of the earlier frameworks that make managing
+ virtual machines easier.
+ Eucalyptus is an open-source software platform that implements IaaS-style
+ cloud computing.
+ Eucalyptus provides an Amazon Web Services (AWS) compli-ant EC2-based web
+ service interface for interacting with the Cloud service.
+ Euca-lyptus has been previously the dominant alternative to AWS in academia.
+ How-ever, based on usage patterns in FutureGrid we believe it is replaced
+ by OpenStack.
+ High Performance Computing can be defined as the application of super-computing
+ techniques to solve computational problems that are too large for standard
+ computers or would take too much time.
+ This is one of the more im-portant features that the scientific community
+ needs to achieve their projects.
+ Nat-urally using HPC resouces and services is also useful in the area of
+ Big Data.
+ Sometimes big data needs big machines.
+ Thus, using HPC may be an ovious choice.
+ Map Reduce ….
+ TBD … Storage on FutureGrid has moderate size storage capability that will
+ satisfy the users demand to compare and test someof the previously outlined
+ services.
+ Information Services gather the information of the different elements that
+ make up FutureGrid to provide accurate and complete knowledge of the computa-ti
+onal environment.
+ This information is presented using different web portals.
+\end_layout
+
+\begin_layout Abstract
+2.2Hardware Overview According to the manual, FutureGrid is build out of
+ a number of clusters of dif-ferent type and size that are interconected
+ with up to a 10GB Ethernet among its sites.
+ The sites include Indiana University, University of Chicago, San Diego
+ Su-percomputing Center, Texas Advanced Computing Center, and University
+ of Flor-ida.
+\end_layout
+
+\begin_layout Abstract
+Overview of the Clusters
+\end_layout
+
+\begin_layout Abstract
+NameSystem Type# Nodes# CPUS# CoresTFLOPSRAM (GB)Storage (TB)Site indiaIBM
+ iDataplex1282561024113072335IU hotelIBM iDataplex8416867272016120UC sierraIBM
+ iDataplex841686727268896SDSC foxtrotIBM iDataplex326425637680UF alamoDell
+ Poweredge961927688115230TACC xrayCray XT5m1166664613285.4IU bravoHP Proliant1632
+1281.73072128IU deltaSuperMicro GPU Cluster16321921333144IU limaAeon Eclipse64816
+1281.35123.8SDSC echoSuperMicro ScaleMP Cluster163219226144192IU
+\end_layout
+
+\begin_layout Abstract
+3.
+ Services and Tools for Big Data 3.1 High Performance Computing
+\end_layout
+
+\begin_layout Abstract
+3.2 Hadoop My Hadoop
+\end_layout
+
+\begin_layout Abstract
+Cloudmesh
+\end_layout
+
+\begin_layout Abstract
+Acknowledgement Some of the text published in this chapter is available
+ form the FutureGrid por-tal.
+ The FutureGrid project is funded by the National Science Foundation (NSF)
+ and is led by Indiana University with University of Chicago, University
+ of Florida, San Diego Supercomputing Center, Texas Advanced Computing Center,
+ Universi-ty of Virginia, University of Tennessee, University of Southern
+ California, Dres-den, Purdue University, and Grid 5000 as partner sites.
+ This material is based up-on work supported in part by the National Science
+ Foundation under Grant No.
+ 0910812.
+\end_layout
+
+\begin_layout Abstract
+If you use FutureGrid, we ask you to include the following reference in
+ your papers the following reference in addition to this chapter: Fox, G.,
+ G.
+ von Laszewski, J.
+ Diaz, K.
+ Keahey, J.
+ Fortes, R.
+ Figueiredo, S.
+ Smallen, W.
+ Smith, and A.
+ Grimshaw, “FutureGrid - a reconfigurable testbed for Cloud, HPC and Grid
+ Computing”, Contemporary High Performance Computing: From Petascale to-ward
+ Exascale, April, 2013.
+ Editor J.
+ Vetter.
+ Contemporary High Performance Computing: From Petascale toward Exascale,
+ April, 2013.
+\end_layout
+
+\begin_layout Abstract
+References •[FG] Fox, G., G.
+ von Laszewski, J.
+ Diaz, K.
+ Keahey, J.
+ Fortes, R.
+ Figueiredo, S.
+ Smallen, W.
+ Smith, and A.
+ Grimshaw, “FutureGrid - a reconfigurable testbed for Cloud, HPC and Grid
+ Computing”, Con-temporary High Performance Computing: From Petascale toward
+ Exascale, April, 2013.
+ Editor J.
+ Vetter.
+ Contemporary High Perfor-mance Computing: From Petascale toward Exascale,
+ April, 2013.
+\end_layout
+
+\end_body
+\end_document
