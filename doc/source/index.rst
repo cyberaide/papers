@@ -1,22 +1,23 @@
-.. Papers documentation master file, created by
-   sphinx-quickstart on Thu Feb 27 11:21:46 2014.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to Papers's documentation!
+Draft Papers
 ==================================
 
-Contents:
+This repository contains the draft papers with Gregor von Laszewki as
+coauthor starting in the year 2014.
 
-.. toctree::
-   :maxdepth: 2
+Other repositories on google code and sourceforge are also available.
 
+List of Papers
+===============
 
+* FutureGrid for BigData
 
-Indices and tables
-==================
+Contributors
+=============
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+* Gregor von Laszewski, laszewski@gmail.com
+
+Bibliography
+=============
+
+* TBD
 
