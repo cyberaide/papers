@@ -3,7 +3,7 @@ BASENAME=$(shell basename $(PATHNAME))
 PROJECT=cyberaide
 
 all:
-	make -f Makefile sphinx
+	make -f Makefile force
 
 ######################################################################
 # GIT INTERFACES
