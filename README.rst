@@ -10,3 +10,8 @@ Paper drafts with Gregor von Laszewski as one of its authors
 +---------------+--------------------------------------+
 | Source        | https://github.com/cyberaide/papers  |
 +---------------+--------------------------------------+
+
+Paper Drafts
+============
+
+* https://github.com/cyberaide/papers/blob/master/bigdata/vonLaszewski-bigdata.pdf
