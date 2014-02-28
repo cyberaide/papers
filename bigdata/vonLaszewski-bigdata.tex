@@ -1,9 +1,9 @@
 \documentclass{article}
 
-\usepackage{array,graphicx}
+\usepackage{array}
+\usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{pifont}
-\usepackage{graphicx}
 
 \newcommand*\rot{\rotatebox{90}}
 
@@ -16,9 +16,9 @@
 
 \maketitle
 
-\begin{abstract}
 
-AAA
+
+\begin{abstract}
 
 In this chapter we will be introducing you to FutureGrid that provides a testbed to conduct research for Cloud, Grid, and High Performance Computing. Although FutureGrid has only a relatively small number of compute cores (about 4500 regu-lar cores and 14000 GPU cores) it provides an ideal playground to test out various frameworks that may be useful for users to consider as part of their big data analy-sis pipelines. 
 
@@ -27,47 +27,70 @@ The chapter is structured as follows. First we will provide the reader with an i
 We conclude the chapter with our observation cast throught three years of op-erating FutureGrid and provide an outlook for the next steps.
 \end{abstract}
 
-
-\begin{figure}[h!]
+\begin{figure}[htb]
   \caption{FutureGrid High Level User Services.}
   \centering
-    \includegraphics[width=1.0\textwidth]{images/user-services}
+    \includegraphics[width=1.0\textwidth]{images/fg-iaas-trend.pdf}
+\end{figure}
+
+\begin{figure}[htb]
+  \caption{FutureGrid High Level User Services.}
+  \centering
+    \includegraphics[width=1.0\textwidth]{images/project-frequency.pdf}
+\end{figure}
+
+\begin{figure}[htb]
+  \caption{FutureGrid High Level User Services.}
+  \centering
+    \includegraphics[width=1.0\textwidth]{images/project-frequency-1.pdf}
+\end{figure}
+
+\begin{figure}[htb]
+  \caption{FutureGrid High Level User Services.}
+  \centering
+    \includegraphics[width=1.0\textwidth]{images/project-disciplines.pdf}
 \end{figure}
 
 \begin{figure}[h!]
   \caption{FutureGrid High Level User Services.}
   \centering
-    \includegraphics[width=1.0\textwidth]{images/architecture}
+    \includegraphics[width=1.0\textwidth]{images/user-services.pdf}
 \end{figure}
 
 \begin{figure}[h!]
   \caption{FutureGrid High Level User Services.}
   \centering
-    \includegraphics[width=1.0\textwidth]{images/trend}
+    \includegraphics[width=1.0\textwidth]{images/architecture.pdf}
 \end{figure}
 
 \begin{figure}[h!]
   \caption{FutureGrid High Level User Services.}
   \centering
-    \includegraphics[width=1.0\textwidth]{images/cm-functionality}
+    \includegraphics[width=1.0\textwidth]{images/trend.pdf}
 \end{figure}
 
 \begin{figure}[h!]
   \caption{FutureGrid High Level User Services.}
   \centering
-    \includegraphics[width=1.0\textwidth]{images/cm-arch}
+    \includegraphics[width=1.0\textwidth]{images/cm-functionality.pdf}
 \end{figure}
 
 \begin{figure}[h!]
   \caption{FutureGrid High Level User Services.}
   \centering
-    \includegraphics[width=1.0\textwidth]{images/shift2}
+    \includegraphics[width=1.0\textwidth]{images/cm-arch.pdf}
 \end{figure}
 
 \begin{figure}[h!]
   \caption{FutureGrid High Level User Services.}
   \centering
-    \includegraphics[width=1.0\textwidth]{images/rainbow}
+    \includegraphics[width=1.0\textwidth]{images/shift2.pdf}
+\end{figure}
+
+\begin{figure}[h!]
+  \caption{FutureGrid High Level User Services.}
+  \centering
+    \includegraphics[width=1.0\textwidth]{images/rainbow.pdf}
 \end{figure}
 
 \section{Introduction}
@@ -137,10 +160,15 @@ reconfiguration
 
 \subsection{High Performance Computing}
 
+From http://hadoop.apache.org
+
+The Apache Hadoop project develops open-source software for reliable, scalable, distributed computing.
+
+The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage. Rather than rely on hardware to deliver high-availability, the library itself is designed to detect and handle failures at the application layer, so delivering a highly-available service on top of a cluster of computers, each of which may be prone to failures.
 
 from sriram:
 
-1. Introduction
+\section{Hadoop}
 
 Traditional HPC environments typically support batch job submissions using resource
 management systems such as the TORQUE Resource Manager (also known as the
@@ -161,7 +189,7 @@ symbolically link to an external location that will be persistent – i.e. data 
 runs will continue to persist even after the Hadoop runs are complete. More details are as
 follows.
 
-2. Details
+\subsection{Details}
 
 The pre-requisite for myHadoop is a valid Hadoop installation – we recommend that you
 use Hadoop version 0.20.2 since that is the only version of Hadoop that this package has
@@ -172,7 +200,7 @@ an example of how to use myHadoop with PBS. A similar script for SGE can be foun
 \$MY\_HADOOP\_HOME/sge-example.sh.
 A step-by-step process for using myHadoop is as follows.
 
-2.1. Initial Configuration
+\subsection{Initial Configuration}
 
 Ensure that the environment variables inside \$MY\_HADOOP\_HOME/bin/setenv.sh are
 set correctly. You can set your HADOOP\_HOME, and the locations for your HDFS data
@@ -183,7 +211,7 @@ directory. There is no need to edit any of the parameters, especially if you are
 expert Hadoop user. If you are familiar with the various Hadoop parameters, you may
 edit the parameters that fall outside the “DO NOT EDIT” sections.
 
-2.2. Request N nodes from the Scheduler
+\subsection{Request N nodes from the Scheduler}
 
 Once the environment variables have been set correctly, we are ready to use myHadoop
 using a regular PBS or SGE submission script. Your PBS script should contain the
@@ -221,7 +249,7 @@ should be pre-configured with an allocation\_rule set to 1 (one). This ensures t
 Hadoop cluster is set up such that multiple instances of the Hadoop daemons are not
 scheduled on the same node.
 
-2.3. Set the myHadoop Environment
+\subsection{Set the myHadoop Environment}
 
 Run the \$MY\_HADOOP\_HOME/bin/setenv.sh script (that you modified in Section 2.1)
 to set all the environment variables required by myHadoop.
@@ -232,7 +260,7 @@ that this directory is accessible to all nodes – and a way to do this is to ma
 directory is on a shared file system such as NFS or Lustre.
 export HADOOP\_CONF\_DIR=<configuration directory>
 
-2.4. Configure the myHadoop Cluster
+\subsection{Configure the myHadoop Cluster}
 
 You can initialize and configure the Hadoop cluster by using the
 \$MY\_HADOOP\_HOME/bin/pbs-configure.sh (or sge-configure.sh) script. You may
@@ -255,18 +283,21 @@ should have directories named 1, 2, … , N. The configuration script sets up sy
 links from node I to the BASE\_DIR/I directory. When this mode is used, there is no need
 to copy data back and forth from HDFS to another file system between runs.
 
-2.5. Format HDFS (if need be)
+\subsection{Format HDFS (if need be)}
+
 If myHadoop is being used in transient mode, or if it is being used for the first time in
 persistent mode, then you will have to format the HDFS as follows:
 \$HADOOP\_HOME/bin/hadoop --config \$HADOOP\_CONF\_DIR namenode –format
 
-2.6. Run Hadoop Jobs
+\subsection{Run Hadoop Jobs}
+
 You are now all set to start all the Hadoop daemons as follows:
 \$HADOOP\_HOME/bin/start-all.sh
 Once the daemons are all started up, you can start using Hadoop as usual. You may also
 stage data in and out from HDFS, as required.
 
-2.7. Clean up
+\subsection{Clean up}
+
 Although, PBS or SGE may be set up to automatically clean up after your Hadoop job is
 complete, it is always a good idea to stop all the Hadoop daemons, and use the clean-up
 script to clean up after yourself.
