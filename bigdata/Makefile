@@ -20,6 +20,13 @@ watch:
 
 .PHONY: all clean view fast watch
 
+pull:
+	git pull
+
+up:
+	git commit -a
+	git push
+
 publish:
 	@echo "==============================================================="
 	@echo "publish ${FILE}.pdf -> http://cyberaide.github.io/papers/${FILE}.pdf" 

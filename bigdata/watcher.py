@@ -17,7 +17,7 @@ class ChangeHandler(FileSystemEventHandler):
         if event.is_directory:
             return
         if os.path.splitext(event.src_path)[-1].lower() == ".tex":
-            subprocess.call("make fast", shell=True)
+            subprocess.call("make", shell=True)
             subprocess.call("make view", shell=True)
  
  

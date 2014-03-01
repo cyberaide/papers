@@ -20,82 +20,28 @@
 
 \begin{abstract}
 
-In this chapter we will be introducing you to FutureGrid that provides a testbed to conduct research for Cloud, Grid, and High Performance Computing. Although FutureGrid has only a relatively small number of compute cores (about 4500 regu-lar cores and 14000 GPU cores) it provides an ideal playground to test out various frameworks that may be useful for users to consider as part of their big data analy-sis pipelines. 
+In this chapter we will be introducing you to FutureGrid that provides a testbed to conduct research for Cloud, Grid, and High Performance Computing. Although FutureGrid has only a relatively small number of compute cores (about 4500 regular cores and 14000 GPU cores) it provides an ideal playground to test out various frameworks that may be useful for users to consider as part of their big data analysis pipelines. 
 
-The chapter is structured as follows. First we will provide the reader with an in-troduction to Future Grid. We will list a number of projects that use Futuregrid to conduct data analysis and introduce some of them to the reader. We will tell you about which services and Hardware exists. Next we will analyze which services are preinstalled and are available for big data analysis. As services that users may need for their work we point out how such a testbed can be utilized not only while provisioning virtual machines, but also on bare metal. 
+The chapter is structured as follows. First we will provide the reader with an introduction to Future Grid. We will list a number of projects that use Futuregrid to conduct data analysis and introduce some of them to the reader. We will tell you about which services and Hardware exists. Next we will analyze which services are preinstalled and are available for big data analysis. As services that users may need for their work we point out how such a testbed can be utilized not only while provisioning virtual machines, but also on bare metal. 
 
-We conclude the chapter with our observation cast throught three years of op-erating FutureGrid and provide an outlook for the next steps.
+We conclude the chapter with our observation cast throught three years of operating FutureGrid and provide an outlook for the next steps.
 \end{abstract}
 
-\begin{figure}[htb]
-  \caption{FutureGrid High Level User Services.}
-  \centering
-    \includegraphics[width=1.0\textwidth]{images/fg-iaas-trend.pdf}
-\end{figure}
-
-\begin{figure}[htb]
-  \caption{FutureGrid High Level User Services.}
-  \centering
-    \includegraphics[width=1.0\textwidth]{images/project-frequency.pdf}
-\end{figure}
-
-\begin{figure}[htb]
-  \caption{FutureGrid High Level User Services.}
-  \centering
-    \includegraphics[width=1.0\textwidth]{images/project-frequency-1.pdf}
-\end{figure}
-
-\begin{figure}[htb]
-  \caption{FutureGrid High Level User Services.}
-  \centering
-    \includegraphics[width=1.0\textwidth]{images/project-disciplines.pdf}
-\end{figure}
-
 \begin{figure}[h!]
-  \caption{FutureGrid High Level User Services.}
   \centering
     \includegraphics[width=1.0\textwidth]{images/user-services.pdf}
+  \caption{FutureGrid High Level User Services.}
 \end{figure}
 
 \begin{figure}[h!]
-  \caption{FutureGrid High Level User Services.}
   \centering
     \includegraphics[width=1.0\textwidth]{images/architecture.pdf}
-\end{figure}
-
-\begin{figure}[h!]
-  \caption{FutureGrid High Level User Services.}
-  \centering
-    \includegraphics[width=1.0\textwidth]{images/trend.pdf}
-\end{figure}
-
-\begin{figure}[h!]
-  \caption{FutureGrid High Level User Services.}
-  \centering
-    \includegraphics[width=1.0\textwidth]{images/cm-functionality.pdf}
-\end{figure}
-
-\begin{figure}[h!]
-  \caption{FutureGrid High Level User Services.}
-  \centering
-    \includegraphics[width=1.0\textwidth]{images/cm-arch.pdf}
-\end{figure}
-
-\begin{figure}[h!]
-  \caption{FutureGrid High Level User Services.}
-  \centering
-    \includegraphics[width=1.0\textwidth]{images/shift2.pdf}
-\end{figure}
-
-\begin{figure}[h!]
-  \caption{FutureGrid High Level User Services.}
-  \centering
-    \includegraphics[width=1.0\textwidth]{images/rainbow.pdf}
+  \caption{Architecture.}
 \end{figure}
 
 \section{Introduction}
 
-FutureGrid \cite{las2010gce,las12fg-bookchapter}“is a project led by Indiana University and funded by the Na-tional Science Foundation (NSF) to develop a high-performance grid test bed that will allow scientists to collaboratively develop and test innovative approaches to parallel, grid, and cloud computing. FutureGrid will provide the infrastructure to researchers that allows them to perform their own computational experiments us-ing distributed systems. The goal is to make it easier for scientists to conduct such experiments in a transparent manner.  FutureGrid users will be able to deploy their own hardware and software con-figurations on a public/private cloud, and run their experiments. They will be able to save their configurations and execute their experiments using the provided tools. The FutureGrid test bed is composed of a high-speed network connecting distributed clusters of high performance computers. FutureGrid employs virtual-ization technology that will allow the test bed to support a wide range of operating systems.”
+FutureGrid \cite{las2010gce,las12fg-bookchapter}“is a project led by Indiana University and funded by the National Science Foundation (NSF) to develop a highperformance grid test bed that will allow scientists to collaboratively develop and test innovative approaches to parallel, grid, and cloud computing. FutureGrid will provide the infrastructure to researchers that allows them to perform their own computational experiments using distributed systems. The goal is to make it easier for scientists to conduct such experiments in a transparent manner.  FutureGrid users will be able to deploy their own hardware and software configurations on a public/private cloud, and run their experiments. They will be able to save their configurations and execute their experiments using the provided tools. The FutureGrid test bed is composed of a highspeed network connecting distributed clusters of high performance computers. FutureGrid employs virtualization technology that will allow the test bed to support a wide range of operating systems.”
 
 
 \section{Overview of FutureGrid for Big Data}
@@ -103,17 +49,17 @@ FutureGrid \cite{las2010gce,las12fg-bookchapter}“is a project led by Indiana U
 \subsection{Service Overview}
 
 According to the manual FutureGrid provides a number of different services. These services include:
-OpenStack which includes a collection of open source components to deliver public and private clouds. These components currently include OpenStack Com-pute) OpenStack Object Storage, and OpenStack Image Service. OpenStack has received considerable momentum due to its openness and the support of compa-nies. 
-Nimbus which is an open-source service package that allows users to run vir-tual machines on FutureGrid hardware. Just as in Openstack users can upload their own virtual machine images or customize existing once. Nimbusnext to Eucalyp-tus is one of the earlier frameworks that make managing virtual machines easier.
-Eucalyptus is an open-source software platform that implements IaaS-style cloud computing. Eucalyptus provides an Amazon Web Services (AWS) compli-ant EC2-based web service interface for interacting with the Cloud service.  Euca-lyptus has been previously the dominant alternative to AWS  in academia. How-ever, based on usage patterns in FutureGrid we believe it is replaced by OpenStack.
-High Performance Computing can be defined as the application of super-computing techniques to solve computational problems that are too large for standard computers or would take too much time. This is one of the more im-portant features that the scientific community needs to achieve their projects. Nat-urally using HPC resouces and services is also useful in the area of Big Data. Sometimes big data needs big machines. Thus, using HPC may be an ovious choice.
+OpenStack which includes a collection of open source components to deliver public and private clouds. These components currently include OpenStack Compute) OpenStack Object Storage, and OpenStack Image Service. OpenStack has received considerable momentum due to its openness and the support of companies. 
+Nimbus which is an opensource service package that allows users to run virtual machines on FutureGrid hardware. Just as in Openstack users can upload their own virtual machine images or customize existing once. Nimbusnext to Eucalyptus is one of the earlier frameworks that make managing virtual machines easier.
+Eucalyptus is an opensource software platform that implements IaaS-style cloud computing. Eucalyptus provides an Amazon Web Services (AWS) compliant EC2-based web service interface for interacting with the Cloud service.  Eucalyptus has been previously the dominant alternative to AWS  in academia. However, based on usage patterns in FutureGrid we believe it is replaced by OpenStack.
+High Performance Computing can be defined as the application of supercomputing techniques to solve computational problems that are too large for standard computers or would take too much time. This is one of the more important features that the scientific community needs to achieve their projects. Naturally using HPC resouces and services is also useful in the area of Big Data. Sometimes big data needs big machines. Thus, using HPC may be an ovious choice.
 Map Reduce …. TBD …
 Storage on FutureGrid has moderate size storage capability that will satisfy the users demand to compare and test someof the previously outlined services.
-Information Services gather the information of the different elements that make up FutureGrid to provide accurate and complete knowledge of the computa-tional environment. This information is presented using different web portals.
+Information Services gather the information of the different elements that make up FutureGrid to provide accurate and complete knowledge of the computational environment. This information is presented using different web portals.
 
 \subsection{Hardware Overview}
 
-According to the manual, FutureGrid is build out of a number of clusters of dif-ferent type and size that are interconected with up to a 10GB Ethernet among its sites. The sites include Indiana University, University of Chicago, San Diego Su-percomputing Center, Texas Advanced Computing Center, and University of Flor-ida.
+According to the manual, FutureGrid is build out of a number of clusters of different type and size that are interconected with up to a 10GB Ethernet among its sites. The sites include Indiana University, University of Chicago, San Diego Supercomputing Center, Texas Advanced Computing Center, and University of Florida.
 
 Overview of the Clusters
 
@@ -140,11 +86,10 @@ echo    & \shortstack{SuperMicro \\ScaleMP Cluster} & 16           & 32      & 1
 \end{table}
 
 
-\section{Dev Ops}
 
-Cobbler
+\input{usage}
 
-xcat
+\input{devops}
 
 
 
@@ -162,9 +107,9 @@ reconfiguration
 
 From http://hadoop.apache.org
 
-The Apache Hadoop project develops open-source software for reliable, scalable, distributed computing.
+The Apache Hadoop project develops opensource software for reliable, scalable, distributed computing.
 
-The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage. Rather than rely on hardware to deliver high-availability, the library itself is designed to detect and handle failures at the application layer, so delivering a highly-available service on top of a cluster of computers, each of which may be prone to failures.
+The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage. Rather than rely on hardware to deliver highavailability, the library itself is designed to detect and handle failures at the application layer, so delivering a highlyavailable service on top of a cluster of computers, each of which may be prone to failures.
 
 from sriram:
 
@@ -180,10 +125,10 @@ environment using a scheduler such as PBS or SGE. In this release, we support Ha
 job submissions via PBS and SGE. However, this approach is equally feasible for other
 schedulers such as Condor, as well.
 Our approach is to configure Hadoop clusters “on-demand” by first requesting resources
-for an N-node Hadoop cluster via PBS. Once the resources are received, the Hadoop
+for an Nnode Hadoop cluster via PBS. Once the resources are received, the Hadoop
 configurations and environments are set up based on the set of resources provided by
 PBS. The Hadoop Distributed File System (HDFS) can be configured in one of two ways
-– in 1) transient (non-persistent) or 2) persistent modes. In the non-persistent mode, the
+– in 1) transient (nonpersistent) or 2) persistent modes. In the nonpersistent mode, the
 HDFS is set up to use local storage. In the persistent mode, the HDFS is set to
 symbolically link to an external location that will be persistent – i.e. data from Hadoop
 runs will continue to persist even after the Hadoop runs are complete. More details are as
@@ -191,7 +136,7 @@ follows.
 
 \subsection{Details}
 
-The pre-requisite for myHadoop is a valid Hadoop installation – we recommend that you
+The prerequisite for myHadoop is a valid Hadoop installation – we recommend that you
 use Hadoop version 0.20.2 since that is the only version of Hadoop that this package has
 been tested with. Henceforth, we will refer to the location of the Hadoop installation as
 HADOOP\_HOME. We will refer to the location of the myHadoop installation (i.e. this
@@ -245,7 +190,7 @@ Your SGE script should contain the following lines to initialize SGE:
 \end{verbatim}
 
 For SGE, there is one important rule to remember. The queue name specified above
-should be pre-configured with an allocation\_rule set to 1 (one). This ensures that the
+should be preconfigured with an allocation\_rule set to 1 (one). This ensures that the
 Hadoop cluster is set up such that multiple instances of the Hadoop daemons are not
 scheduled on the same node.
 
@@ -264,7 +209,7 @@ export HADOOP\_CONF\_DIR=<configuration directory>
 
 You can initialize and configure the Hadoop cluster by using the
 \$MY\_HADOOP\_HOME/bin/pbs-configure.sh (or sge-configure.sh) script. You may
-create a transient or persistent myHadoop cluster by changing the command-line
+create a transient or persistent myHadoop cluster by changing the commandline
 arguments as follows.
 For a transient myHadoop cluster, configure it as follows (replace 4 with the total number
 of nodes requested):
@@ -299,7 +244,7 @@ stage data in and out from HDFS, as required.
 \subsection{Clean up}
 
 Although, PBS or SGE may be set up to automatically clean up after your Hadoop job is
-complete, it is always a good idea to stop all the Hadoop daemons, and use the clean-up
+complete, it is always a good idea to stop all the Hadoop daemons, and use the cleanup
 script to clean up after yourself.
 \$HADOOP\_HOME/bin/stop-all.sh
 \$MY\_HADOOP\_HOME/bin/pbs-cleanup.sh -n 4 OR
@@ -320,24 +265,26 @@ The Apache Hadoop Project provides an open source implementation of MapReduce an
 
 This tutorial illustrates how to run Apache Hadoop thru the batch systems on FutureGrid using the MyHadoop tool.
 
-1.1.1. myHadoop on FutureGrid
+\subsubsection{myHadoop on FutureGrid}
+
 MyHadoop is a set of scripts that configure and instantiate Hadoop as a batch job.
 
 myHadoop 0.20.2 is currently installed on Alamo, Hotel, India, and Sierra FutureGrid systems.
 
-\section{Cloudmesh}
+\input{cloudmesh}
+
 
 
 \section*{Acknowledgement}
 
 Some of the text published in this chapter is available form the
-FutureGrid por-tal. The FutureGrid project is funded by the National
+FutureGrid portal. The FutureGrid project is funded by the National
 Science Foundation (NSF) and is led by Indiana University with
 University of Chicago, University of Florida, San Diego Supercomputing
-Center, Texas Advanced Computing Center, Universi-ty of Virginia,
-University of Tennessee, University of Southern California, Dres-den,
+Center, Texas Advanced Computing Center, University of Virginia,
+University of Tennessee, University of Southern California, Dresden,
 Purdue University, and Grid 5000 as partner sites. This material is
-based up-on work supported in part by the National Science Foundation
+based upon work supported in part by the National Science Foundation
 under Grant No. 0910812. If you use FutureGrid, we ask you to include the reference \cite{las2010gce,las12fg-bookchapter}.
 
 \bibliographystyle{IEEEtranS}
