@@ -10,8 +10,11 @@
 \usepackage{pifont}
 \usepackage{todonotes}
 \usepackage{rotating}
+\usepackage{color}
 
 \newcommand*\rot{\rotatebox{90}}
+
+\newcommand{\FILE}[1]{\todo[color=green!40]{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TITLE ABLE OF CONTENTS
@@ -30,6 +33,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TABLE OF CONTENTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{roman}
 
 \begin{center}
 {\Large\bf \TITLE}\\
@@ -53,6 +58,8 @@
 % TITLE OF PAPER
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\pagenumbering{arabic}
+
 \maketitle
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,6 +81,7 @@ We conclude the chapter with our observation cast throught three years of operat
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{introduction}
+
 \section{Overview of FutureGrid}
 
 \input{hardware}
@@ -125,5 +133,9 @@ bib/vonLaszewski-jabref,%
 bib/image-refs,%
 bib/cyberaide-cloud,%
 bib/python}
+
+\appendix
+
+\input{overview}
 
 \end{document}
