@@ -1,6 +1,21 @@
 \todo{services.tex}
+\section{Services and Tools for Big Data}
 
-\subsection{Service Overview}
+\subsection{Traditional High Performance Computing}
+
+The traditional high performance computing environment provied by queuing systems and Message Passing Interface (MPI) programs provide a suitable infrastructure not only for simulations, but also for the analysis of large data. However, considerable amount of work has to be put in place to optimize the available infarstructure for the problem doamin. This has been successfully demonstrated for many biological applications. Additinally the existance of a queuing system can provide some advantages when the available resources are utilized to a full extend and resource starvation exists while sharing the resources with other users. This has been esppecially useful to also support educational activities for clases with many users that for example want to test map reduce activities controled by a queing system as described in Section \ref{S:hadoop}.
+
+\subsection{Virtual Large-Memory System}
+
+One of the demands often posed in big data analysis it to place the data as much as possible into memory to speed up calculations and in some cases to fit the entire dataset into memore. However, this analysis may come at a cost as for example the use of HPC computing via MPI adds additional programming complexity within a cluster. Therefore it is desirable to virtualize the memory from multiple servers in a cluster to provide one big memory system that can be easily accessed by the underlying software. 
+One such implementation, vSMP by ScaleMP \cite{www-scalemp}.
+Experiments conducted on futureGrid using HPCC
+benchmarks show only a 4-6\% drop in efficiency when compared to native
+cluster performance \cite{las12fg-bookchapter}. This makes it feasable for many applications. ScaleMP is installed on the FutureGrid echo cluster that has 16 servers and can access up to 3TB in shared virtual memory.
+
+\subsection{Infrastructure as a Service}
+
+
 
 According to the manual FutureGrid provides a number of different
 services. These services include:
@@ -31,3 +46,5 @@ Information Services gather the information of the different elements that make 
   \includegraphics[width=0.9\textwidth]{images/architecture.pdf}
   \caption{Architecture.}
 \end{figure}
+
+\input{hadoop}
