@@ -1,28 +1,74 @@
 \FILE{hadoop.tex}
 
-\subsubsection{Hadoop}\label{S:hadoop}
+\subsubsection{Map Reduce}
 
-\todo{reorganize hadoop section}
- 
-''The Apache Hadoop project develops opensource software for reliable, scalable, distributed computing.
+Map reduce models have been familiar to the programming and distrubted
+computing community for a long time and have been historically often
+associated with the functional programming's map and reduce. However
+the map and reduce framework introduced recently \cite{Dean:mapreduce}
+distinguishes itself from such efforts while
+applying it repeatedly, with fault tollerance on a very large
+distributed data set. 
 
-The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage. Rather than rely on hardware to deliver highavailability, the library itself is designed to detect and handle failures at the application layer, so delivering a highlyavailable service on top of a cluster of computers, each of which may be prone to failures.
-'' \cite{www/hadoop}
+Instead of bringing the data to the computer in map reduce application
+we often use the concept of brinnging the computing to the data. This
+makes a lot of sense when we assume that google has a large number of
+data that is distributed an many serveres and repeated search queries
+are cast to find results accross them. 
 
-\subsubsection{myHadoop}
+In general we can define a {\em map} step, that takes the input problem and divides it
+into smaller sub-problems distributing it among worker nodes. The map
+function is than executed on the data distributed on the various
+servers. The {\em reduce} step collects the answers of the subproblem and combines
+them in some fashion. 
 
-From sriram \cite{report/myhadoop}
+\begin{figure}[htb]
+  \centering
+    \includegraphics[width=1.0\textwidth]{images/mapreduce.pdf}
+  \caption{Project Member Dist.}
+\end{figure}
 
-Traditional HPC environments typically support batch job submissions
-using resource management systems such as the TORQUE Resource Manager (also known as the
-Portable Batch System – PBS) or the Sun Grid Engine (SGE). On the other hand, Hadoop
-provides it own scheduling, and manages its own job and task submissions, and tracking.
-Since both systems are designed to have complete control over the resources that they
-manage, the challenge is how to enable users to run Hadoop jobs in a typical HPC
-environment using a scheduler such as PBS or SGE. In this release, we support Hadoop
-job submissions via PBS and SGE. However, this approach is equally feasible for other
-schedulers such as Condor, as well.
-Our approach is to configure Hadoop clusters “on-demand” by first requesting resources
+\paragraph{Hadoop}\label{S:hadoop}
+
+Hadoop \cite{report/myhadoop}\cite{myhadoop2} is an Apache project
+delivering an opensource software that uses the map/reduce farmework
+in a distributed environment while focussing on scalability and
+reliability. Its design includes the Hadoop FIle System providing an
+easy to use file system to distribute the data among the servers on
+which the caluculations will be executed. Hadoop is designed to deal
+with faults through redundancy which is an important feature when
+conducting data analysis on very large distributed databases
+\cite{www/hadoop}.  Hadoop is written in Java and provides the
+essential map reduce functionality and allows the system to be
+configured for existing hardware.
+
+\paragraph{myHadoop}
+
+MyHadoop which is installed on many of the compute clusters in
+FutureGrid, enables to launch Hadoop clusters via traditional
+high-performance compute clusters. For this it utilizes the underlying
+batch scheduling system. 
+
+The reason for managing hadoop jobs via a batch system may be
+multiple. First, the available infrastructure is resource constrained
+and utilization of disks and compute resources must be specially
+accounted for to allow shared usage by many users. This naturally
+happens in the educational research community quite frequently. 
+Second, to efficiently utilize the compute and data infrastructure
+researchers may not run Hadoop or MPI jobs continiously. At times the
+may need an haddop environment at other time they prefer a traditional
+message passing enviironment while at the same time being under
+resource constratints.
+
+The idea of myHadoop is to submit a job to the queuing system that
+sets up a hadoop cluster for the length of the reseravation and the
+researcher can than use it do conduct experiments either via
+predifined jobs or in interactive mode. This is achieved by
+identifying a number of resources 
+
+
+
+by first requesting resources
 for an Nnode Hadoop cluster via PBS. Once the resources are received, the Hadoop
 configurations and environments are set up based on the set of resources provided by
 PBS. The Hadoop Distributed File System (HDFS) can be configured in one of two ways
