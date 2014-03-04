@@ -1,6 +1,6 @@
 \FILE{hadoop.tex}
 
-\section{Hadoop}\label{S:hadoop}
+\subsubsection{Hadoop}\label{S:hadoop}
 
 \todo{reorganize hadoop section}
  
@@ -8,6 +8,8 @@
 
 The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage. Rather than rely on hardware to deliver highavailability, the library itself is designed to detect and handle failures at the application layer, so delivering a highlyavailable service on top of a cluster of computers, each of which may be prone to failures.
 '' \cite{www/hadoop}
+
+\subsubsection{myHadoop}
 
 From sriram \cite{report/myhadoop}
 
@@ -30,7 +32,7 @@ symbolically link to an external location that will be persistent – i.e. data 
 runs will continue to persist even after the Hadoop runs are complete. More details are as
 follows.
 
-\subsection{Details}
+\paragraph{Details}
 
 The prerequisite for myHadoop is a valid Hadoop installation – we recommend that you
 use Hadoop version 0.20.2 since that is the only version of Hadoop that this package has
@@ -41,7 +43,7 @@ an example of how to use myHadoop with PBS. A similar script for SGE can be foun
 \$MY\_HADOOP\_HOME/sge-example.sh.
 A step-by-step process for using myHadoop is as follows.
 
-\subsection{Initial Configuration}
+\paragraph{Initial Configuration}
 
 Ensure that the environment variables inside \$MY\_HADOOP\_HOME/bin/setenv.sh are
 set correctly. You can set your HADOOP\_HOME, and the locations for your HDFS data
@@ -52,7 +54,7 @@ directory. There is no need to edit any of the parameters, especially if you are
 expert Hadoop user. If you are familiar with the various Hadoop parameters, you may
 edit the parameters that fall outside the “DO NOT EDIT” sections.
 
-\subsection{Request N nodes from the Scheduler}
+\paragraph{Request N nodes from the Scheduler}
 
 Once the environment variables have been set correctly, we are ready to use myHadoop
 using a regular PBS or SGE submission script. Your PBS script should contain the
@@ -90,7 +92,7 @@ should be preconfigured with an allocation\_rule set to 1 (one). This ensures th
 Hadoop cluster is set up such that multiple instances of the Hadoop daemons are not
 scheduled on the same node.
 
-\subsection{Set the myHadoop Environment}
+\paragraph{Set the myHadoop Environment}
 
 Run the \$MY\_HADOOP\_HOME/bin/setenv.sh script (that you modified in Section 2.1)
 to set all the environment variables required by myHadoop.
@@ -101,7 +103,7 @@ that this directory is accessible to all nodes – and a way to do this is to ma
 directory is on a shared file system such as NFS or Lustre.
 export HADOOP\_CONF\_DIR=<configuration directory>
 
-\subsection{Configure the myHadoop Cluster}
+\paragraph{Configure the myHadoop Cluster}
 
 You can initialize and configure the Hadoop cluster by using the
 \$MY\_HADOOP\_HOME/bin/pbs-configure.sh (or sge-configure.sh) script. You may
@@ -124,20 +126,20 @@ should have directories named 1, 2, … , N. The configuration script sets up sy
 links from node I to the BASE\_DIR/I directory. When this mode is used, there is no need
 to copy data back and forth from HDFS to another file system between runs.
 
-\subsection{Format HDFS (if need be)}
+\paragraph{Format HDFS (if need be)}
 
 If myHadoop is being used in transient mode, or if it is being used for the first time in
 persistent mode, then you will have to format the HDFS as follows:
 \$HADOOP\_HOME/bin/hadoop --config \$HADOOP\_CONF\_DIR namenode –format
 
-\subsection{Run Hadoop Jobs}
+\paragraph{Run Hadoop Jobs}
 
 You are now all set to start all the Hadoop daemons as follows:
 \$HADOOP\_HOME/bin/start-all.sh
 Once the daemons are all started up, you can start using Hadoop as usual. You may also
 stage data in and out from HDFS, as required.
 
-\subsection{Clean up}
+\paragraph{Clean up}
 
 Although, PBS or SGE may be set up to automatically clean up after your Hadoop job is
 complete, it is always a good idea to stop all the Hadoop daemons, and use the cleanup
@@ -147,7 +149,7 @@ script to clean up after yourself.
 \$MY\_HADOOP\_HOME/bin/sge-cleanup.sh -n 4
 
 
-\subsection{myHadoop}
+\paragraph{myHadoop}
 
 MyHadoop is a set of scripts that configure and instantiate Hadoop as a batch job.
 
