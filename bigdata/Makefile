@@ -16,7 +16,7 @@ fast:
 	latexmk -pdf ${FILE}
 
 watch:
-	latexmk -pvc -view=pdf ${FILE}
+	latexmk -interaction=nonstopmode -pvc -view=pdf ${FILE} 
 
 .PHONY: all clean view fast watch
 
