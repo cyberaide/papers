@@ -1,0 +1,63 @@
+\todo{services.tex}
+\section{Services and Tools for Big Data}
+
+FutureGrid offers a very rich environment to its users. We can categorize them in a stacked service architecture as depicted in 
+Figure {F:services}. We distinguish the following categories: Cloud PaaS, IaaS, GridaaS, HPCaaS, TestbedaaS which we will explain in more detail in the next sections. These services are integrated in our general FG high-level architecture depicted in \ref{F:arch}. More detail about the architecture can be found in \cite{las2010gce,las12fg-bookchapter}. Within this paper we will focus on describing services that have been explicitly used for big data research in FutureGrid.
+
+\begin{figure}[p]
+  \centering
+    \includegraphics[width=0.9\textwidth]{images/user-services.pdf}
+  \caption{FutureGrid high-level user services.}\label{F:services}
+  ~\\
+  \centering
+  \includegraphics[width=0.9\textwidth]{images/architecture.pdf}
+  \caption{FutureGrid high-level architecture.}\label{F:arch}.
+\end{figure}
+
+\subsection{Testbed as a Service (TestbedaaS)}
+
+It is a well accepted paradigm that today a lot of research including the one performed in big data are carried out by interdisciplinary scientific teams. Thus, FutureGrid provides a nice framework to manage user and project affiliation and propagates this information to a variety of subsystems constituting the FG service infrastructure. This includes operational services (not explicitly mention in Figure label{F:services}) to deal with authentication, authorization and accounting. In particular we have developed a unique metric framework that allows us to create usage reports from all of our Infrastructure as a Service frameworks. Repeatable experiments can be created with a number of tools including Pegasus, Precip and Cloudmesh. VMs can be managed on high level either via cloudmesh (see Section ?) or phantom. Provisioning of services and images can be conducted by RAIN \cite{?} and cloudmesh (see Section ?). Infrastructure monitoring is enabled via Nagios \cite{nagios}, Ganglia \cite{ganglia}, and Inca \cite{inca}.
+
+\subsection{Traditional High Performance Computing as a Service (HPCaaS)}
+
+Within the traditional high performance computing services FG offers a traditional MPI/batch queuing system and a virtual large memor system that are beneficial for big data calculations.
+
+\subsubsection{MPI and Batch Queues}
+
+The traditional high performance computing environment provided by queuing systems and Message Passing Interface (MPI) programs provide a suitable infrastructure not only for simulations, but also for the analysis of large data. However, considerable amount of work has to be put in place to optimize the available infrastructure for the problem domain. This has been successfully demonstrated for many biological applications. Additionally the existence of a queuing system can provide some advantages when the available resources are utilized to a full extend and resource starvation exists while sharing the resources with other users. This has been especially useful to also support educational activities for clases with many users that for example want to test map reduce activities controlled by a queuing system as described in Section \ref{S:hadoop}.
+
+\subsubsection{Virtual Large-Memory System}
+
+One of the demands often posed in big data analysis it to place the data as much as possible into memory to speed up calculations and in some cases to fit the entire dataset into memore. However, this analysis may come at a cost as for example the use of HPC computing via MPI adds additional programming complexity within a cluster. Therefore it is desirable to virtualize the memory from multiple servers in a cluster to provide one big memory system that can be easily accessed by the underlying software. 
+One such implementation, vSMP by ScaleMP \cite{www-scalemp}.
+Experiments conducted on futureGrid using HPCC
+benchmarks show only a 4-6\% drop in efficiency when compared to native
+cluster performance \cite{las12fg-bookchapter}. This makes it feasible for many applications. ScaleMP is installed on the FutureGrid echo cluster that has 16 servers and can access up to 3TB in shared virtual memory.
+
+\subsection{Grid as a Service (GridaaS)}
+
+Not surprisingly the demand for computational Grids on FutureGrid has been relatively small. While we saw few requests for Globus we decided to focus on the installation of more popular systems. The little use can be explained by the availability of large Grid production infrastructure elsewhere such as in XSEDE and based on the move of the community away from complex Grid solutions to either cloud computing or even back to more traditional batch processing solutions.
+
+
+\subsection{Infrastructure as a Service (IaaS)}
+
+One of the main features of FutureGrid is to offer its users a variety of infrastructure as a service frameworks. These frameworks provide virtualized resources to the users on top of existing cyberinfrastructure fabric. This includes but is not limited to virtualized servers, storage, network, disk, and load balancers. In FutureGrid the most common hypervisor that runs the virtual machines as guest on the underlaying operating system is KVM. Some resources also run XEN. Through the ability to provide large numbers of virtual machines to the users, access mode to utilize the resources has been changed from a reservation based service to an on-demand service. This comes with the benefit that if enough resources are available they will be immediately allocated to the user. However if not enough resources can be offered the system will decine the request and return with an error. Based on our experience with FG over the last couple of years it is advantageous to offered a mixed operation model. This includes a standrad production cloud that operates on-demand, but also a set of reserved cloud instances that can be reserved for a particular project. We have conducted this for several projects in FutureGrid including those that required dedicated access to resources as part of big data research such as classes \cite{fg405,fg368} or research projects with extremely large virtual machines \cite{fg298}.
+
+The IaaS services that are offered in FutureGrid contain the following:
+
+\begin{description}
+\item [OpenStack] has become most recently besides HPC the most requested services in FG based on newly started projects. OpenStack is an open source cloud infrastructure as a service framework to deliver public and private clouds. It contains a number of components that together build a powerful and flexible set to create a cloud service offering. Services include a compute service, and object storage, an image service, a monitoring service, and an orchestration service. OpenStack has received considerable momentum due to its openness and the support of companies. Within FutureGrid OpenStack clouds are currently deployed on india, sierra, hotel, and alamo.  
+
+\item [Nimbus] is an opensource service package allowing users to run virtual machines on FutureGrid hardware. Just as in Openstack users can upload their own virtual machine images or customize existing once. Nimbus, next to Eucalyptus is one of the earlier frameworks that make managing virtual machines possible. Nimbus provides a basic set of cloud services including services to easier orchestrate a cloud setup. However, such services are now also provided by Eucalyptus and OpenStack. Nimbus does not provide as of this writing features for project management. Nimbus provides a selected subset of AWS protocols such as EC2. Accounting is done on a user-by-user basis. This has some implications on user management as in large scale deployments project management features are highly desired.
+
+\item [Eucalyptus] is an opensource software IaaS framework for cloud computing. Eucalyptus provides an Amazon Web Services (AWS) compliant EC2-based web service interface to its users enabling the easy integration between a local cloud managed with Eucalyptus and AWS. However, as others such as OpenStack also provide EC2 interfaces for many application users OpenStack has become a viable alternative.
+
+\end{description}
+
+Which of the IaaS frameworks to chose is a question that is not that easy to answer. Many of our projects evaluate multiple of them to chose the one best suited for their use case. At other times users chose a framework that they have previously successfully used. Over time the quality of the IaaS framework has significantly changed. Within the last year Openstack has become the most popular  platform on FutureGrid.
+
+
+\subsection{Cloud Platform as a Service (PaaS)}
+
+
+\input{hadoop}

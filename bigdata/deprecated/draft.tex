@@ -1,0 +1,137 @@
+\documentclass{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LATEX DEFINITIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{todonotes}
+\usepackage{rotating}
+\usepackage{color}
+\usepackage{afterpage}
+\usepackage{amssymb}
+\usepackage{latexsym}
+
+\newcommand*\rot{\rotatebox{90}}
+
+\newcommand{\FILE}[1]{\todo[color=green!40]{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TITLE ABLE OF CONTENTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\TITLE}{The FutureGrid Testbed for Big Data}
+\newcommand{\AUTHOR}{Gregor von Laszewsi, Geoffrey C. Fox}
+\newcommand{\EMAIL}{laszewski@gmail.com}
+\begin{document}
+
+\title{\TITLE}
+\author{\AUTHOR}
+\date{\EMAIL}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLE OF CONTENTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{roman}
+
+\begin{center}
+{\Large\bf \TITLE}\\
+{\AUTHOR}\\
+{\EMAIL}
+\end{center}
+
+\tableofcontents
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LIST OF TODOS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\listoftodos
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TITLE OF PAPER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{arabic}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ABSTRACT OF PAPER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{abstract}
+
+In this chapter we will be introducing you to FutureGrid that provides a testbed to conduct research for Cloud, Grid, and High Performance Computing. Although FutureGrid has only a modest number of compute cores (about 4500 regular cores and 14000 GPU cores) it provides an ideal playground to test out various frameworks that may be useful for users to consider as part of their big data analysis pipelines. 
+
+The chapter is structured as follows. First we will provide the reader with an introduction to Future Grid. We will list a number of projects that use Futuregrid to conduct data analysis and introduce some of them to the reader. We will tell you about which services and Hardware exists. Next we will analyze which services are preinstalled and are available for big data analysis. As services that users may need for their work we point out how such a testbed can be utilized not only while provisioning virtual machines, but also on bare metal. 
+
+We conclude the chapter with our observation cast throught three years of operating FutureGrid and provide an outlook for the next steps.
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{introduction}
+
+\section{Overview of FutureGrid}
+
+\input{hardware}
+
+\input{services}
+
+\input{usage}
+
+\input{devops}
+
+
+\input{education}
+
+
+\input{cloudmesh}
+
+\input{summary}
+
+
+\section*{Acknowledgement}
+
+Some of the text published in this chapter is available form the
+FutureGrid portal. The FutureGrid project is funded by the National
+Science Foundation (NSF) and is led by Indiana University with
+University of Chicago, University of Florida, San Diego Supercomputing
+Center, Texas Advanced Computing Center, University of Virginia,
+University of Tennessee, University of Southern California, Dresden,
+Purdue University, and Grid 5000 as partner sites. This material is
+based upon work supported in part by the National Science Foundation
+under Grant No. 0910812. If you use FutureGrid and produce a paper or
+presentation, we ask you to include the reference
+\cite{las2010gce,las12fg-bookchapter}.
+
+\bibliographystyle{IEEEtranS}
+\bibliography{%
+bib/references,%
+bib/vonLaszewski-jabref,%
+bib/image-refs,%
+bib/cyberaide-cloud,%
+bib/python}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\clearpage
+
+%\appendix
+
+%\input{overview}
+
+\end{document}
